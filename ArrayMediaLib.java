@@ -46,13 +46,16 @@ public class ArrayMediaLib
             System.out.println(changeSong.getTitle());
         }*/
         // show the array
-        for (int i = 1; i <= topTenSongs.length; i++) {
-            topTenSongs[i-1].setPrice(1.29);
-            if(i % 3 == 0 ) topTenSongs[i-1].setPrice(0.99); 
-            System.out.println(topTenSongs[i-1].getPrice());
+        for (Song i : topTenSongs) {
+            i.setPrice(1.29);
+        }
+        for(int i = 2; i<topTenSongs.length; i+=3){
+            topTenSongs[i].setPrice(0.99);    
         }
         System.out.println("-AFTER--");
         for (Song showSong : topTenSongs) {
+            System.out.print(showSong.getPrice());
+            System.out.print("—");
             System.out.println(showSong.getTitle());
         }
     }
